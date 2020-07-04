@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:Toast.ViewModels"
+             mc:Ignorable="d"
+             x:Class="Toast.Views.ToastView">
+
+    <ContentPage.BindingContext>
+
+        <vm:ToastViewModel />
+
+    </ContentPage.BindingContext>
+    
+    <ContentPage.Content>
+        
+        <StackLayout
+            Padding="15">
+            
+            <Label
+                FontAttributes="Bold"
+                FontSize="Large"
+                HorizontalOptions="CenterAndExpand"
+                Text="Mensaje Toast"
+                TextColor="Black"
+                VerticalOptions="CenterAndExpand" 
+                />
+
+            <Button
+                Command="{Binding ShowToastCommand}"
+                BackgroundColor="DarkGoldenrod"
+                Text="¡Toast sin librerías!"
+                TextColor="White"
+                />
+
+            <Button
+                Command="{Binding ShowAcrUserDialogsToastCommand}"
+                BackgroundColor="DarkGoldenrod"
+                Text="¡Toast con Acr.UserDialogs!"
+                TextColor="White"
+                />
+
+            <Button
+                Command="{Binding ShowPluginToastCommand}"
+                BackgroundColor="DarkGoldenrod"
+                Text="¡Toast con Plugin.Toast!"
+                TextColor="White"
+                />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
